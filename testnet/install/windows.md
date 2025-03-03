@@ -13,7 +13,7 @@ description: "This page contains instructions for installing the Zond Testnet #B
 
 
 
-# Setting up prerequisits
+# Setting up prerequisites
 
 ## 1. Setting up WSL 
 
@@ -80,7 +80,7 @@ sudo chown root:docker /var/run/docker.sock
 sudo snap install yq
 ```
 
-### Install Bazel v6.3.2 (Instructions taken from https://bazel.build/install/ubuntu)
+### Install Bazel v7.5.0 (Instructions taken from https://bazel.build/versions/7.5.0/install/ubuntu)
 
 ```
 sudo apt install apt-transport-https curl gnupg -y
@@ -88,7 +88,7 @@ curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-arch
 sudo mv bazel-archive-keyring.gpg /usr/share/keyrings
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 sudo apt update
-sudo apt-get install bazel-6.3.2
+sudo apt-get install bazel-7.5.0
 ```
 
 ### Install Kurtosis 

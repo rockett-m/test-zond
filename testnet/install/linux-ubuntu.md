@@ -58,7 +58,7 @@ And update the docker.sock user group
 sudo chown root:docker /var/run/docker.sock
 ```
 
-### Install Bazel v6.3.2 (Instructions taken from https://bazel.build/install/ubuntu)
+### Install Bazel v7.5.0 (Instructions taken from https://bazel.build/versions/7.5.0/install/ubuntu)
 
 ```
 sudo apt install apt-transport-https curl gnupg -y
@@ -66,7 +66,7 @@ curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-arch
 sudo mv bazel-archive-keyring.gpg /usr/share/keyrings
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 sudo apt update
-sudo apt-get install bazel-6.3.2
+sudo apt-get install bazel-7.5.0
 ```
 
 ### Install Kurtosis 
@@ -101,7 +101,7 @@ bash ./scripts/local_testnet/stop_local_testnet.sh
 To test the private test network (replace the MAPPED_PORT in the following with port that is mapped to 8545 that you see after running previous step which is Step 2. Start the private test network).
 
 ```
-curl http://127.0.0.1:MAPPED_PORT/   -X POST   -H "Content-Type: application/json"   --data '{"method":"zond_getBlockByNumber","params":["latest", false],"id":1,"jsonrpc":"2.0"}' | jq -e
+curl http://127.0.0.1:MAPPED_PORT/ -X POST -H "Content-Type: application/json" --data '{"method":"zond_getBlockByNumber","params":["latest", false],"id":1,"jsonrpc":"2.0"}' | jq -e
 ```
 
 :::info PRO-Tip:
